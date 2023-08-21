@@ -25,7 +25,7 @@ function handleClick(target){
       const totalDiscount = document.getElementById('discount-ammount')
       const couponCode = couponInput.value;
       const discountPercent = 20;
-      if (couponCode === 'SELL20'){
+      if (couponCode === 'SELL200'){
          const discountAmount = (discountPercent / 100) * total;
          const finalAmount = total - discountAmount;
          totalDiscount.innerText = discountAmount.toFixed(2);
