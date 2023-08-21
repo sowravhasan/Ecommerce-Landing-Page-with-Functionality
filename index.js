@@ -1,14 +1,14 @@
 let total = 0;
 function handleClick(target){
-    const productName = target.parentNode.childNodes[5].innerText;
+    const productName = target.childNodes[5].innerText;
     const li = document.createElement('li');
     li.innerText = productName;
     const selectedItem = document.getElementById('selected-product');
     selectedItem.appendChild(li);
-    const prize = target.parentNode.childNodes[7].innerText.split(' ')[0];
+    const prize = target.childNodes[7].innerText.split(' ')[0];
     total = parseInt(total) + parseInt(prize);
     const totalPrize = document.getElementById('total-prize');
-    totalPrize.innerText = total;
+    totalPrize.innerText = total.toFixed(2);
     const disableBtn = document.getElementById('purchaseBtn');
     if (total > 0){
        purchaseBtn.removeAttribute('disabled');
@@ -29,7 +29,7 @@ function handleClick(target){
          const discountAmount = (discountPercent / 100) * total;
          const finalAmount = total - discountAmount;
          totalDiscount.innerText = discountAmount.toFixed(2);
-         finalTotal.innerText = finalAmount;
+         finalTotal.innerText = finalAmount.toFixed(2);
          couponInput.value = ' ';
       }
      })
