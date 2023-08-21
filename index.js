@@ -13,11 +13,13 @@ function handleClick(target){
     if (total > 0){
        purchaseBtn.removeAttribute('disabled');
        purchaseBtn.style.color = 'white';
+       purchaseBtn.classList.remove("cursor-not-allowed");
     }
     const applyBtn = document.getElementById('apply-btn');
     if (total >= 200){
         applyBtn.removeAttribute('disabled');
         applyBtn.style.color = 'white';
+        applyBtn.classList.remove("cursor-not-allowed");
      }
      const couponInput = document.getElementById('coupon-input');
      applyBtn.addEventListener('click', function(){
